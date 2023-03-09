@@ -1,0 +1,112 @@
+// LINKS 
+.links {
+    margin-top: 1rem;
+    background: $clr-light;
+    padding: 2rem 0;
+    border-top: 1px solid rgb(196, 196, 196);
+    h2{
+        position: absolute;
+        top: 40%;
+        right: -12rem;
+        transform: rotate(-90deg);
+        font-size: 2.4rem;
+        color: $clr-dark;
+        font-weight: 900;
+        display: flex;
+        align-items: flex-start;
+        letter-spacing: 2px;
+        display: none;
+        span{
+            font-size: 2.4remrem;
+            &:last-child{
+                font-size: 1rem;
+            }
+        }
+        @include mediaQuery($desktop){
+            display: block;
+        }
+    }
+    &__wrapper{
+        padding: 1rem 0;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgb(196, 196, 196);
+        
+    position: relative;
+        @include mediaQuery($desktop){
+            @include grid(5 , 1rem);
+            // width: 100rem;
+        }
+        .links__item{
+            margin-top: 1rem;
+            @include mediaQuery($desktop){
+                margin-top: unset;
+                margin: 2rem 0;
+            }
+            h4{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: 600;
+                font-size: clamp(1.6rem, 2vw, 2rem);
+
+                
+                span{
+                    color: lighten($clr-dark, 20);
+                    @include mediaQuery($desktop){
+                        color: #000000;
+                    }
+                }
+                i{
+                    transition: .5s ease-in-out;
+                    font-size: 2rem;
+                    @include mediaQuery($desktop){
+                        display: none;
+                    }
+                    &.open{
+                        transform: rotate(-180deg);
+                        transition: .5s ease-in-out;
+                    }
+                }
+
+                
+            }
+            ul{
+                margin-left: 1rem;
+                max-height: 0;
+                overflow: hidden;
+                transition: .5s ease-in-out;
+                @include mediaQuery($desktop){
+                    max-height: unset;
+                    margin-left: unset;
+                    margin-top: 1rem;
+                }
+                &.open{
+                    max-height: 25rem;
+                }
+                li{
+                    margin: 2rem 0;
+                    @include mediaQuery($desktop){
+                        
+                    }
+                    a{
+                        font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+                        color: lighten($clr-dark, 30);
+                        font-weight: 500;
+                        &:hover{
+                            color: $clr-dark;
+                        }
+                    }
+                }
+            }
+            
+            &:nth-child(2){
+                margin: 3rem 0;
+                @include mediaQuery($desktop){
+                    margin: unset;
+                    margin: 2rem 0;
+                }
+            }
+        }
+        
+    }
+}
